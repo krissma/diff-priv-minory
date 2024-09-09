@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+ipykernel = "*"
+pandas = "*"
+geopandas = "*"
+mapclassify = "*"
+jupyter = "*"
+jupyterlab = "*"
+matplotlib = "*"
+seaborn = "*"
+colorcet = "*"
+openpyxl = "*"
+import-ipynb = "*"
+diffprivlib = "*"
+xlrd = "*"
+numpy = "*"
+pyarrow = "*"
+
+[dev-packages]
+ipykernel = "*"
+
+[requires]
+python_version = "3.11"
