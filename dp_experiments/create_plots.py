@@ -11,10 +11,10 @@ def create_boxplot_merged_experiments(df, column_name, epsilon, fig_folder_name,
     sns.set_theme(style='darkgrid')
     
     sns.boxplot(data=df.query('rmse == @column_name & epsilon == @epsilon'), x='area_name', y='value', hue='postprocessing', palette=colors, width=0.5, gap=0.2)
-    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=2, borderaxespad=0, fontsize=10)
-    plt.xlabel('Wards')
-    plt.ylabel('RMSE')
-    plt.title(f'RMSE Geometric Mechanism with Epsilon = {epsilon} {title}')
+    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=2, borderaxespad=0, fontsize=11)
+    plt.xlabel('Wards', fontsize=11)
+    plt.ylabel('RMSE', fontsize=11)
+    plt.title(f'RMSE Geometric Mechanism with Epsilon = {epsilon} {title}', fontsize=13)
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_{epsilon}{file_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_{epsilon}{file_name}.svg')), bbox_inches='tight')
 
@@ -23,10 +23,10 @@ def create_boxplot_experiments(df, column_name, fig_folder_name, colors, title =
     sns.set_theme(style='darkgrid')
     
     sns.boxplot(data=df.query('rmse == @column_name'), x='area_name', y='value', hue='epsilon', palette=colors, width=0.5, gap=0.2)
-    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=4, borderaxespad=0, fontsize=10)
-    plt.xlabel('Wards')
-    plt.ylabel('RMSE')
-    plt.title(f'RMSE Geometric Mechanism Overview {title}')
+    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=4, borderaxespad=0, fontsize=11)
+    plt.xlabel('Wards', fontsize=11)
+    plt.ylabel('RMSE', fontsize=11)
+    plt.title(f'RMSE Geometric Mechanism Overview {title}', fontsize=13)
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_epsilons{file_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_epsilons{file_name}.svg')), bbox_inches='tight')
 
@@ -35,10 +35,10 @@ def create_boxplot_merged_experiments_laplace(df, column_name, epsilon, fig_fold
     sns.set_theme(style='darkgrid')
     
     sns.boxplot(data=df.query('rmse == @column_name & epsilon == @epsilon'), x='area_name', y='value', hue='postprocessing', palette=colors, width=0.5, gap=0.2)
-    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=ncol, borderaxespad=0, fontsize=10)
-    plt.xlabel('Wards')
-    plt.ylabel('RMSE')
-    plt.title(f'RMSE Laplace Mechanism with Epsilon = {epsilon} {title}')
+    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=ncol, borderaxespad=0, fontsize=11)
+    plt.xlabel('Wards', fontsize=11)
+    plt.ylabel('RMSE', fontsize=11)
+    plt.title(f'RMSE Laplace Mechanism with Epsilon = {epsilon} {title}', fontsize=13)
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_laplace_{epsilon}{file_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_laplace_{epsilon}{file_name}.svg')), bbox_inches='tight')
 
@@ -47,10 +47,10 @@ def create_boxplot_experiments_laplace(df, column_name, fig_folder_name, colors,
     sns.set_theme(style='darkgrid')
     
     sns.boxplot(data=df.query('rmse == @column_name'), x='area_name', y='value', hue='epsilon', palette=colors, width=0.5, gap=0.2)
-    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=4, borderaxespad=0, fontsize=10)
-    plt.xlabel('Wards')
-    plt.ylabel('RMSE')
-    plt.title(f'RMSE Laplace Mechanism Overview {title}')
+    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=4, borderaxespad=0, fontsize=11)
+    plt.xlabel('Wards', fontsize=11)
+    plt.ylabel('RMSE', fontsize=11)
+    plt.title(f'RMSE Laplace Mechanism Overview {title}', fontsize=13)
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_laplace_epsilons{file_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_laplace_epsilons{file_name}.svg')), bbox_inches='tight')
 
@@ -59,10 +59,10 @@ def create_boxplot_experiments_kl(df, column_name, mu,fig_folder_name, colors, t
     sns.set_theme(style='darkgrid')
     
     sns.boxplot(data=df.query('kl_divergence == @column_name & mu == @mu'), x='area_name', y='value', hue='epsilon', palette=colors, width=0.5, gap=0.2)
-    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=4, borderaxespad=0, fontsize=10)
-    plt.xlabel('Wards')
-    plt.ylabel('KL Divergence')
-    plt.title(f'KL Divergence Overview with mu={mu} {title}')
+    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=4, borderaxespad=0, fontsize=11)
+    plt.xlabel('Wards', fontsize=11)
+    plt.ylabel('KL Divergence', fontsize=11)
+    plt.title(f'KL Divergence Overview with mu = {mu} {title}', fontsize=13)
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_epsilons_{mu}{file_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_epsilons_{mu}{file_name}.svg')), bbox_inches='tight')
 
@@ -71,10 +71,10 @@ def create_boxplot_merged_experiments_kl(df, column_name, epsilon, fig_folder_na
     sns.set_theme(style='darkgrid')
     colors = ['red', 'blue', 'orange', 'green', 'purple', 'yellow']
     sns.boxplot(data=df.query('kl_divergence == @column_name & epsilon == @epsilon'), palette=colors, x='area_name', y='value', hue='mu', width=0.5, gap=0.2)
-    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=6, borderaxespad=0, fontsize=10)
-    plt.xlabel('Wards')
-    plt.ylabel('KL Divergence')
-    plt.title(f'KL Divergence with Epsilon = {epsilon} {title}')
+    plt.legend(bbox_to_anchor=(0.5, -0.22), loc='lower center', ncol=6, borderaxespad=0, fontsize=11)
+    plt.xlabel('Wards', fontsize=11)
+    plt.ylabel('KL Divergence', fontsize=11)
+    plt.title(f'KL Divergence with Epsilon = {epsilon} {title}', fontsize=13)
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_{epsilon}{file_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_{epsilon}{file_name}.svg')), bbox_inches='tight')
 
@@ -85,7 +85,7 @@ def kl_experiments_scatter(df, mu, ward_labels, color, fig_folder_name, title=""
     plt.figure(figsize=(14,8))
     p = sns.relplot(x='epsilon', y='value', col='area_name', hue='area_name', palette=color, 
                     data=df.query('kl_divergence == "kl_divergence" & mu == @mu'), col_wrap=3, height=3, s=20)
-    plt.suptitle(f'KL Divergence for mu={mu} {title}', fontsize=14)
+    plt.suptitle(f'KL Divergence for mu = {mu} {title}', fontsize=14)
     sns.move_legend(p, "upper right", bbox_to_anchor=(0.99, 0.9), ncol=1, title='', frameon=False)
 
     for i, ax in enumerate(p.axes.flatten()):
@@ -109,8 +109,10 @@ def kl_experiments_line(df, mu, ward_labels, color, fig_folder_name, title="", f
                     kind='line', marker='o', markersize=5, markeredgecolor=None, estimator=np.mean)
 
 
-    plt.suptitle(f'KL Divergence for mu={mu} {title}', fontsize=14)
-    sns.move_legend(p, "upper right", bbox_to_anchor=(0.99, 0.9), ncol=1, title='', frameon=False)
+    plt.suptitle(f'KL Divergence for mu = {mu} {title}', fontsize=14)
+    sns.move_legend(
+        p, "upper right", bbox_to_anchor=(1.0, 0.9), ncol=1, title="", frameon=False
+    )
 
     for i, ax in enumerate(p.axes.flatten()):
         ax.set_title(ward_labels[i])
@@ -494,18 +496,18 @@ def barplot_inc(gap, width, epsilons, df, ward_codes, labels_wards, fig_folder_n
 
         area_df = df.query('area_code == @code').reset_index()
 
-        axs[i].bar(0, area_df['number_ethnicities'], width, label='Ethnic groups total area count')
-        axs[i].bar(0, area_df['number_minorities'], width, label='Minority groups total area count')
+        axs[i].bar(0, area_df['number_ethnicities'], width, label='Ethnic Groups Total Area Count')
+        axs[i].bar(0, area_df['number_minorities'], width, label='Minority Groups Total Area Count')
 
-        axs[i].bar(x, area_df['significantly_increased'], width, label='Significantly increased groups total')
-        axs[i].bar(x, area_df['significantly_increased_minority'], width, label='Significantly increased minority groups')
+        axs[i].bar(x, area_df['significantly_increased'], width, label='Significantly Increased Groups Total')
+        axs[i].bar(x, area_df['significantly_increased_minority'], width, label='Significantly Increased Minority Groups')
 
         xticks = np.insert(x, 0, 0, axis=0)
 
         axs[i].set_title(labels_wards[i], fontsize=12)
         axs[i].set_xticks(xticks, [0] + epsilons)
-        axs[0].set_ylabel('Significantly Increased', fontsize=10)
-        axs[i].set_xlabel('Epsilon', fontsize=10)
+        axs[0].set_ylabel('Significantly Increased', fontsize=11)
+        axs[i].set_xlabel('Epsilon', fontsize=11)
 
         axs[i].yaxis.set_tick_params(labelbottom=True)
         axs[i].yaxis.set_major_locator(MaxNLocator(integer=True))
@@ -513,7 +515,7 @@ def barplot_inc(gap, width, epsilons, df, ward_codes, labels_wards, fig_folder_n
 
     fig.suptitle(f'Significantly Increased Groups', fontsize=16, y=1.0)
 
-    plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=10)
+    plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=11)
     plt.savefig((os.path.join(fig_folder_name, 'significantly_increased__compare_bars_cat.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, 'significantly_increased__compare_bars_cat.svg')), bbox_inches='tight')
 
@@ -534,25 +536,25 @@ def barplot_dec(gap, width, epsilons, df, ward_codes, labels_wards, fig_folder_n
 
         area_df = df.query('area_code == @code').reset_index()
 
-        axs[i].bar(0, area_df['number_ethnicities'], width, label='Ethnic groups total area count')
-        axs[i].bar(0, area_df['number_minorities'], width, label='Minority groups total area count')
+        axs[i].bar(0, area_df['number_ethnicities'], width, label='Ethnic Groups Total Area Count')
+        axs[i].bar(0, area_df['number_minorities'], width, label='Minority Groups Total Area Count')
 
-        axs[i].bar(x, area_df['significantly_decreased'], width, label='Significantly decreased groups total')
-        axs[i].bar(x, area_df['significantly_decreased_minority'], width, label='Significantly decreased minority groups')
+        axs[i].bar(x, area_df['significantly_decreased'], width, label='Significantly Decreased Groups Total')
+        axs[i].bar(x, area_df['significantly_decreased_minority'], width, label='Significantly Decreased Minority Groups')
 
         xticks = np.insert(x, 0, 0, axis=0)
 
         axs[i].set_title(labels_wards[i], fontsize=12)
         axs[i].set_xticks(xticks, [0] + epsilons)
-        axs[0].set_ylabel('Significantly Decreased', fontsize=10)
-        axs[i].set_xlabel('Epsilon', fontsize=10)
+        axs[0].set_ylabel('Significantly Decreased', fontsize=11)
+        axs[i].set_xlabel('Epsilon', fontsize=11)
 
         axs[i].yaxis.set_tick_params(labelbottom=True)
         axs[i].yaxis.set_major_locator(MaxNLocator(integer=True))
 
     fig.suptitle(f'Significantly Decreased Groups', fontsize=16, y=1.0)
 
-    plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=10)
+    plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=11)
     plt.savefig((os.path.join(fig_folder_name, 'significantly_decreased_compare_bars_cat.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, 'significantly_decreased_compare_bars_cat.svg')), bbox_inches='tight')
    
@@ -575,8 +577,8 @@ def barplot_inc_mean(gap, width, epsilons, df, column_name, ward_names, labels_w
 
     for i, name in enumerate(ward_names):
 
-        axs[i].bar(0, df.query('rmse == "number_ethnicities" & area_name == @name')['value'].mean(), barwidth, label='Ethnic groups total - ground truth', color=palette[0], linewidth=0)
-        axs[i].bar(0, df.query('rmse == "number_minorities" & area_name == @name')['value'].mean(), barwidth, label='Minority groups - ground truth', color=palette[1], linewidth=0)
+        axs[i].bar(0, df.query('rmse == "number_ethnicities" & area_name == @name')['value'].mean(), barwidth, label='Ethnic Groups Total - Ground Truth', color=palette[0], linewidth=0)
+        axs[i].bar(0, df.query('rmse == "number_minorities" & area_name == @name')['value'].mean(), barwidth, label='Minority Groups - Ground Truth', color=palette[1], linewidth=0)
 
         for j, epsilon in enumerate (epsilons):
 
@@ -588,15 +590,15 @@ def barplot_inc_mean(gap, width, epsilons, df, column_name, ward_names, labels_w
 
                 print(f'df_inc_mean: {df_inc.mean()}, df_min_mean: {df_inc_minority.mean()}, df_zero_mean: {df_inc_zero.mean()}')
 
-                axs[i].bar(x[j]-(barwidth/2), df_inc.mean(), barwidth, label='Significantly increased groups total', color=palette[2], linewidth=0)
+                axs[i].bar(x[j]-(barwidth/2), df_inc.mean(), barwidth, label='Significantly Increased Groups Total', color=palette[2], linewidth=0)
                 if ((df_inc.mean() > 0) and (df_inc.mean() > df_inc_minority.mean())):
                     axs[i].errorbar(x[j]-(barwidth/2)-0.05, df_inc.mean(), yerr=df_inc.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
                 
-                axs[i].bar(x[j]-(barwidth/2), df_inc_minority.mean(), barwidth, label='Significantly increased minority groups', color=palette[3], linewidth=0)
+                axs[i].bar(x[j]-(barwidth/2), df_inc_minority.mean(), barwidth, label='Significantly Increased Minority Groups', color=palette[3], linewidth=0)
                 if (df_inc_minority.mean() > 0):
                     axs[i].errorbar(x[j]-(barwidth/2)+0.05, df_inc_minority.mean(), yerr=df_inc_minority.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
 
-                axs[i].bar(x[j]+(barwidth/2), df_inc_zero.mean(), barwidth, label='Significantly increased empty groups', color=color_zero, linewidth=0)
+                axs[i].bar(x[j]+(barwidth/2), df_inc_zero.mean(), barwidth, label='Significantly Increased Empty Groups', color=color_zero, linewidth=0)
                 if (df_inc_zero.mean() > 0):
                     axs[i].errorbar(x[j]+(barwidth/2), df_inc_zero.mean(), yerr=df_inc_zero.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
 
@@ -617,20 +619,20 @@ def barplot_inc_mean(gap, width, epsilons, df, column_name, ward_names, labels_w
 
         axs[i].set_title(labels_wards[i], fontsize=12)
         axs[i].set_xticks(xticks, [0] + epsilons)
-        axs[0].set_ylabel('Significantly Increased', fontsize=10)
-        axs[i].set_xlabel('Epsilon', fontsize=10)
+        axs[0].set_ylabel('Significantly Increased', fontsize=12)
+        axs[i].set_xlabel('Epsilon', fontsize=12)
 
         axs[i].yaxis.set_tick_params(labelbottom=True)
         axs[i].yaxis.set_major_locator(MaxNLocator(integer=True))
 
     plt.margins(y=0, x=0)
     fig.subplots_adjust(top=0.86, wspace=0.1)
-    fig.suptitle(f'Significantly Increased Groups {title}- Mean', fontsize=16, y=1.0)
+    fig.suptitle(f'Significantly Increased Groups {title} - Mean', fontsize=16, y=1.0)
 
     if (len(ward_names) <= 3):
-        plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=10)
+        plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=12)
     else:
-        plt.legend(bbox_to_anchor=(-1.8, -0.3), loc='lower center', ncol=3, borderaxespad=0, fontsize=10)
+        plt.legend(bbox_to_anchor=(-1.8, -0.33), loc='lower center', ncol=3, borderaxespad=0, fontsize=12)
 
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_mean{fig_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_mean{fig_name}.svg')), bbox_inches='tight')
@@ -655,8 +657,8 @@ def barplot_inc_median(gap, width, epsilons, df, column_name, ward_names, labels
 
     for i, name in enumerate(ward_names):
 
-        axs[i].bar(0, df.query('rmse == "number_ethnicities" & area_name == @name')['value'].mean(), barwidth, label='Ethnic groups total - ground truth', color=palette[0], linewidth=0)
-        axs[i].bar(0, df.query('rmse == "number_minorities" & area_name == @name')['value'].mean(), barwidth, label='Minority groups - ground truth', color=palette[1], linewidth=0)
+        axs[i].bar(0, df.query('rmse == "number_ethnicities" & area_name == @name')['value'].mean(), barwidth, label='Ethnic Groups Total - Ground Truth', color=palette[0], linewidth=0)
+        axs[i].bar(0, df.query('rmse == "number_minorities" & area_name == @name')['value'].mean(), barwidth, label='Minority Groups - Ground Truth', color=palette[1], linewidth=0)
 
         for j, epsilon in enumerate (epsilons):
 
@@ -668,15 +670,15 @@ def barplot_inc_median(gap, width, epsilons, df, column_name, ward_names, labels
 
                 print(f'df_inc_median: {df_inc.median()}, df_min_median: {df_inc_minority.median()}, df_zero_median: {df_inc_zero.median()}')
 
-                axs[i].bar(x[j]-(barwidth/2), df_inc.median(), barwidth, label='Significantly increased groups total', color=palette[2], linewidth=0)
+                axs[i].bar(x[j]-(barwidth/2), df_inc.median(), barwidth, label='Significantly Increased Groups Total', color=palette[2], linewidth=0)
                 if ((df_inc.median() > 0) and (df_inc.median() > (df_inc_minority.median()))):
                     axs[i].errorbar(x[j]-(barwidth/2)-0.05, df_inc.median(), yerr=df_inc.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
                 
-                axs[i].bar(x[j]-(barwidth/2), df_inc_minority.median(), barwidth, label='Significantly increased minority groups', color=palette[3], linewidth=0)
+                axs[i].bar(x[j]-(barwidth/2), df_inc_minority.median(), barwidth, label='Significantly Increased Minority Groups', color=palette[3], linewidth=0)
                 if (df_inc_minority.median() > 0):
                     axs[i].errorbar(x[j]-(barwidth/2)+0.05, df_inc_minority.median(), yerr=df_inc_minority.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
 
-                axs[i].bar(x[j]+(barwidth/2), df_inc_zero.median(), barwidth, label='Significantly increased empty groups', color=color_zero, linewidth=0)
+                axs[i].bar(x[j]+(barwidth/2), df_inc_zero.median(), barwidth, label='Significantly Increased Empty Groups', color=color_zero, linewidth=0)
                 if (df_inc_zero.median() > 0):
                     axs[i].errorbar(x[j]+(barwidth/2), df_inc_zero.median(), yerr=df_inc_zero.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
 
@@ -697,20 +699,20 @@ def barplot_inc_median(gap, width, epsilons, df, column_name, ward_names, labels
 
         axs[i].set_title(labels_wards[i], fontsize=12)
         axs[i].set_xticks(xticks, [0] + epsilons)
-        axs[0].set_ylabel('Significantly Increased', fontsize=10)
-        axs[i].set_xlabel('Epsilon', fontsize=10)
+        axs[0].set_ylabel('Significantly Increased', fontsize=12)
+        axs[i].set_xlabel('Epsilon', fontsize=12)
 
         axs[i].yaxis.set_tick_params(labelbottom=True)
         axs[i].yaxis.set_major_locator(MaxNLocator(integer=True))
 
     plt.margins(y=0, x=0)
     fig.subplots_adjust(top=0.86, wspace=0.1)
-    fig.suptitle(f'Significantly Increased Groups {title}- Median', fontsize=16, y=1.0)
+    fig.suptitle(f'Significantly Increased Groups {title} - Median', fontsize=16, y=1.0)
 
     if (len(ward_names) <= 3):
-        plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=10)
+        plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=12)
     else:
-        plt.legend(bbox_to_anchor=(-1.8, -0.3), loc='lower center', ncol=3, borderaxespad=0, fontsize=10)
+        plt.legend(bbox_to_anchor=(-1.8, -0.33), loc='lower center', ncol=3, borderaxespad=0, fontsize=12)
 
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_median{fig_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_median{fig_name}.svg')), bbox_inches='tight')
@@ -733,8 +735,8 @@ def barplot_dec_mean(gap, width, epsilons, df, column_name, ward_names, labels_w
 
     for i, name in enumerate(ward_names):
 
-        axs[i].bar(0, df.query('rmse == "number_ethnicities" & area_name == @name')['value'].mean(), barwidth, label='Ethnic groups total - ground truth', color=palette[0], linewidth=0)
-        axs[i].bar(0, df.query('rmse == "number_minorities" & area_name == @name')['value'].mean(), barwidth, label='Minority groups - ground truth', color=palette[1], linewidth=0)
+        axs[i].bar(0, df.query('rmse == "number_ethnicities" & area_name == @name')['value'].mean(), barwidth, label='Ethnic Groups Total - Ground Truth', color=palette[0], linewidth=0)
+        axs[i].bar(0, df.query('rmse == "number_minorities" & area_name == @name')['value'].mean(), barwidth, label='Minority Groups - Ground Truth', color=palette[1], linewidth=0)
 
         for j, epsilon in enumerate (epsilons):
 
@@ -746,15 +748,15 @@ def barplot_dec_mean(gap, width, epsilons, df, column_name, ward_names, labels_w
 
                 print(f'df_dec_mean: {df_dec.mean()}, df_min_mean: {df_dec_minority.mean()}, df_zero_mean: {df_dec_zero.mean()}')
 
-                axs[i].bar(x[j]-(barwidth/2), df_dec.mean(), barwidth, label='Significantly decreased groups total', color=palette[2], linewidth=0)
+                axs[i].bar(x[j]-(barwidth/2), df_dec.mean(), barwidth, label='Significantly Decreased Groups Total', color=palette[2], linewidth=0)
                 if ((df_dec.mean() > 0) and (df_dec.mean() > (df_dec_minority.mean()))):
                     axs[i].errorbar(x[j]-(barwidth/2)-0.05, df_dec.mean(), yerr=df_dec.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
                 
-                axs[i].bar(x[j]-(barwidth/2), df_dec_minority.mean(), barwidth, label='Significantly decreased minority groups', color=palette[3], linewidth=0)
+                axs[i].bar(x[j]-(barwidth/2), df_dec_minority.mean(), barwidth, label='Significantly Decreased Minority Groups', color=palette[3], linewidth=0)
                 if (df_dec_minority.mean() > 0):
                     axs[i].errorbar(x[j]-(barwidth/2)+0.05, df_dec_minority.mean(), yerr=df_dec_minority.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
 
-                axs[i].bar(x[j]+(barwidth/2), df_dec_zero.mean(), barwidth, label='Significantly decreased empty groups', color=color_zero, linewidth=0)
+                axs[i].bar(x[j]+(barwidth/2), df_dec_zero.mean(), barwidth, label='Significantly Decreased Empty Groups', color=color_zero, linewidth=0)
                 if (df_dec_zero.mean() > 0):
                     axs[i].errorbar(x[j]+(barwidth/2), df_dec_zero.mean(), yerr=df_dec_zero.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
 
@@ -775,20 +777,20 @@ def barplot_dec_mean(gap, width, epsilons, df, column_name, ward_names, labels_w
 
         axs[i].set_title(labels_wards[i], fontsize=12)
         axs[i].set_xticks(xticks, [0] + epsilons)
-        axs[0].set_ylabel('Significantly Decreased', fontsize=10)
-        axs[i].set_xlabel('Epsilon', fontsize=10)
+        axs[0].set_ylabel('Significantly Decreased', fontsize=12)
+        axs[i].set_xlabel('Epsilon', fontsize=12)
 
         axs[i].yaxis.set_tick_params(labelbottom=True)
         axs[i].yaxis.set_major_locator(MaxNLocator(integer=True))
 
     plt.margins(y=0, x=0)
     fig.subplots_adjust(top=0.86, wspace=0.1)
-    fig.suptitle(f'Significantly Decreased Groups {title}- Mean', fontsize=16, y=1.0)
+    fig.suptitle(f'Significantly Decreased Groups {title} - Mean', fontsize=16, y=1.0)
 
     if (len(ward_names) <= 3):
-        plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=10)
+        plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=12)
     else:
-        plt.legend(bbox_to_anchor=(-1.8, -0.3), loc='lower center', ncol=3, borderaxespad=0, fontsize=10)
+        plt.legend(bbox_to_anchor=(-1.8, -0.33), loc='lower center', ncol=3, borderaxespad=0, fontsize=12)
 
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_mean{fig_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_mean{fig_name}.svg')), bbox_inches='tight')
@@ -810,8 +812,8 @@ def barplot_dec_median(gap, width, epsilons, df, column_name, ward_names, labels
 
     for i, name in enumerate(ward_names):
 
-        axs[i].bar(0, df.query('rmse == "number_ethnicities" & area_name == @name')['value'].mean(), barwidth, label='Ethnic groups total - ground truth', color=palette[0], linewidth=0)
-        axs[i].bar(0, df.query('rmse == "number_minorities" & area_name == @name')['value'].mean(), barwidth, label='Minority groups - ground truth', color=palette[1], linewidth=0)
+        axs[i].bar(0, df.query('rmse == "number_ethnicities" & area_name == @name')['value'].mean(), barwidth, label='Ethnic Groups Total - Ground Truth', color=palette[0], linewidth=0)
+        axs[i].bar(0, df.query('rmse == "number_minorities" & area_name == @name')['value'].mean(), barwidth, label='Minority Groups - Ground Truth', color=palette[1], linewidth=0)
 
         for j, epsilon in enumerate (epsilons):
 
@@ -823,15 +825,15 @@ def barplot_dec_median(gap, width, epsilons, df, column_name, ward_names, labels
 
                 print(f'df_dec_median: {df_dec.median()}, df_min_median: {df_dec_minority.median()}, df_zero_median: {df_dec_zero.median()}')
 
-                axs[i].bar(x[j]-(barwidth/2), df_dec.median(), barwidth, label='Significantly decreased groups total', color=palette[2], linewidth=0)
+                axs[i].bar(x[j]-(barwidth/2), df_dec.median(), barwidth, label='Significantly Decreased Groups Total', color=palette[2], linewidth=0)
                 if ((df_dec.median() > 0) and (df_dec.median() > (df_dec_minority.median()))):
                     axs[i].errorbar(x[j]-(barwidth/2)-0.05, df_dec.median(), yerr=df_dec.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
                 
-                axs[i].bar(x[j]-(barwidth/2), df_dec_minority.median(), barwidth, label='Significantly decreased minority groups', color=palette[3], linewidth=0)
+                axs[i].bar(x[j]-(barwidth/2), df_dec_minority.median(), barwidth, label='Significantly Decreased Minority Groups', color=palette[3], linewidth=0)
                 if (df_dec_minority.median() > 0):
                     axs[i].errorbar(x[j]-(barwidth/2)+0.05, df_dec_minority.median(), yerr=df_dec_minority.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
 
-                axs[i].bar(x[j]+(barwidth/2), df_dec_zero.median(), barwidth, label='Significantly decreased empty groups', color=color_zero, linewidth=0)
+                axs[i].bar(x[j]+(barwidth/2), df_dec_zero.median(), barwidth, label='Significantly Decreased Empty Groups', color=color_zero, linewidth=0)
                 if (df_dec_zero.median() > 0):
                     axs[i].errorbar(x[j]+(barwidth/2), df_dec_zero.median(), yerr=df_dec_zero.std(), fmt='none', color='black', linestyle='none', capsize=2, elinewidth=1)
 
@@ -853,20 +855,20 @@ def barplot_dec_median(gap, width, epsilons, df, column_name, ward_names, labels
 
         axs[i].set_title(labels_wards[i], fontsize=12)
         axs[i].set_xticks(xticks, [0] + epsilons)
-        axs[0].set_ylabel('Significantly Decreased', fontsize=10)
-        axs[i].set_xlabel('Epsilon', fontsize=10)
+        axs[0].set_ylabel('Significantly Decreased', fontsize=12)
+        axs[i].set_xlabel('Epsilon', fontsize=12)
 
         axs[i].yaxis.set_tick_params(labelbottom=True)
         axs[i].yaxis.set_major_locator(MaxNLocator(integer=True))
 
     plt.margins(y=0, x=0)
     fig.subplots_adjust(top=0.86, wspace=0.1)
-    fig.suptitle(f'Significantly Decreased Groups {title}- Median', fontsize=16, y=1.0)
+    fig.suptitle(f'Significantly Decreased Groups {title} - Median', fontsize=16, y=1.0)
 
     if (len(ward_names) <= 3):
-        plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=10)
+        plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=12)
     else:
-        plt.legend(bbox_to_anchor=(-1.8, -0.3), loc='lower center', ncol=3, borderaxespad=0, fontsize=10)
+        plt.legend(bbox_to_anchor=(-1.8, -0.33), loc='lower center', ncol=3, borderaxespad=0, fontsize=12)
 
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_median{fig_name}.png')), bbox_inches='tight')
     plt.savefig((os.path.join(fig_folder_name, f'{column_name}_experiments_geo_median{fig_name}.svg')), bbox_inches='tight')
@@ -888,8 +890,8 @@ def population_plot_error_bars_data_error(df_populations, ward_names, labels_war
         axs[i].tick_params(labelbottom=False) 
         axs[i].tick_params(axis='y', labelsize=8)
 
-        axs[i].set_ylabel('Population Percentage')
-        axs[i].set_xlabel('Population Group')
+        axs[i].set_ylabel('Population Percentage', fontsize=12)
+        axs[i].set_xlabel('Population Group', fontsize=12)
         axs[i].set_title(labels_wards[i], fontsize=12)
 
     fig.suptitle(f'Error Introduced by Data Error', fontsize=16, y=1.0)
@@ -913,8 +915,8 @@ def population_plot_error_bars_data_error_boxen(df_populations, ward_names, labe
         axs[i].tick_params(labelbottom=False) 
         axs[i].tick_params(axis='y', labelsize=8)
 
-        axs[i].set_ylabel('Population Percentage')
-        axs[i].set_xlabel('Population Group')
+        axs[i].set_ylabel('Population Percentage', fontsize=12)
+        axs[i].set_xlabel('Population Group', fontsize=12)
         axs[i].set_title(labels_wards[i], fontsize=12)
 
     fig.suptitle(f'Error Introduced by Data Error', fontsize=16, y=1.0)
@@ -939,8 +941,8 @@ def population_plot_error_bars_data_error_numbers_boxen(df_populations, ward_nam
         axs[i].tick_params(labelbottom=False) 
         axs[i].tick_params(axis='y', labelsize=8)
 
-        axs[i].set_ylabel('Population Numbers')
-        axs[i].set_xlabel('Population Group')
+        axs[i].set_ylabel('Population Numbers', fontsize=12)
+        axs[i].set_xlabel('Population Group', fontsize=12)
         axs[i].set_title(labels_wards[i], fontsize=12)
 
     fig.suptitle(f'Error Introduced by Data Error', fontsize=16, y=1.0)
@@ -965,8 +967,8 @@ def population_plot_error_bars_data_error_numbers(df_populations, ward_names, la
         axs[i].tick_params(labelbottom=False) 
         axs[i].tick_params(axis='y', labelsize=8)
 
-        axs[i].set_ylabel('Population Numbers')
-        axs[i].set_xlabel('Population Group')
+        axs[i].set_ylabel('Population Numbers', fontsize=12)
+        axs[i].set_xlabel('Population Group', fontsize=12)
         axs[i].set_title(labels_wards[i], fontsize=12)
 
     fig.suptitle(f'Error Introduced by Data Error', fontsize=16, y=1.0)
@@ -1004,8 +1006,8 @@ def population_plot_error_bars(df_populations, column_name, epsilons, ward_names
                 size=10, va='center')
 
 
-            axs[i].set_ylabel('Population Percentage')
-            axs[i].set_xlabel('Population Group')
+            axs[i].set_ylabel('Population Percentage', fontsize=12)
+            axs[i].set_xlabel('Population Group', fontsize=12)
             axs[i].set_title(labels_wards[i], fontsize=12)
 
         fig.suptitle(f'Error Introduced with Geometric Mechanism with {title}Epsilon = {epsilon}', fontsize=16, y=1.0)
@@ -1041,8 +1043,8 @@ def population_plot_error_bars_boxen(df_populations, column_name, epsilons, ward
                 size=10, va='center')
 
 
-            axs[i].set_ylabel('Population Percentage')
-            axs[i].set_xlabel('Population Group')
+            axs[i].set_ylabel('Population Percentage', fontsize=12)
+            axs[i].set_xlabel('Population Group', fontsize=12)
             axs[i].set_title(labels_wards[i], fontsize=12)
 
         fig.suptitle(f'Error Introduced with Geometric Mechanism with {title}Epsilon = {epsilon}', fontsize=16, y=1.0)
@@ -1077,8 +1079,8 @@ def population_plot_error_bars_laplace(df_populations, column_name, epsilons, wa
                 xycoords = axs[i].get_yaxis_transform(), textcoords='offset points',
                 size=10, va='center')
 
-            axs[i].set_ylabel('Population Percentage')
-            axs[i].set_xlabel('Population Group')
+            axs[i].set_ylabel('Population Percentage', fontsize=12)
+            axs[i].set_xlabel('Population Group', fontsize=12)
             axs[i].set_title(labels_wards[i], fontsize=12)
 
         fig.suptitle(f'Error Introduced with Laplace Mechanism with {title}Epsilon = {epsilon}', fontsize=16, y=1.0)
@@ -1114,8 +1116,8 @@ def population_plot_error_bars_laplace_boxen(df_populations, column_name, epsilo
                 xycoords = axs[i].get_yaxis_transform(), textcoords='offset points',
                 size=10, va='center')
 
-            axs[i].set_ylabel('Population Percentage')
-            axs[i].set_xlabel('Population Group')
+            axs[i].set_ylabel('Population Percentage', fontsize=12)
+            axs[i].set_xlabel('Population Group', fontsize=12)
             axs[i].set_title(labels_wards[i], fontsize=12)
 
         fig.suptitle(f'Error Introduced with Laplace Mechanism with {title}Epsilon = {epsilon}', fontsize=16, y=1.0)
@@ -1139,12 +1141,12 @@ def population_plot_scatterplot(df_populations, column_name, xlabel, epsilons, c
         p = sns.scatterplot(data=df, x=column_name, y='total %', hue='area_name', ax=axs[i], palette=colors, s=40, linewidth=0.3, edgecolor='black')
  
         axs[i].set_title(f'Epsilon = {epsilon}', fontsize=12)
-        axs[0].set_ylabel('Population Percentage', fontsize=11,)
+        axs[0].set_ylabel('Population Percentage', fontsize=12)
 
         p.legend().remove()
         p.set(xlabel=None)
 
-    plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=11)
+    plt.legend(bbox_to_anchor=(1, 1), loc='upper left', borderaxespad=0, fontsize=12)
     fig.supxlabel(xlabel, fontsize=10)
     fig.subplots_adjust(top=0.85, wspace=0.1, bottom=0.12)
 
@@ -1187,8 +1189,8 @@ def population_plot_error_bars_numbers(df_populations, column_name, epsilons, wa
                 size=10, va='center')
 
 
-            axs[i].set_ylabel('Population Numbers')
-            axs[i].set_xlabel('Population Group')
+            axs[i].set_ylabel('Population Numbers', fontsize=12)
+            axs[i].set_xlabel('Population Group', fontsize=12)
             axs[i].set_title(labels_wards[i], fontsize=12)
 
         fig.suptitle(f'Error Introduced with Geometric Mechanism with {title}Epsilon = {epsilon}', fontsize=16, y=1.0)
@@ -1226,8 +1228,8 @@ def population_plot_error_bars_numbers_boxen(df_populations, column_name, epsilo
                 xycoords = axs[i].get_yaxis_transform(), textcoords='offset points',
                 size=10, va='center')
 
-            axs[i].set_ylabel('Population Numbers')
-            axs[i].set_xlabel('Population Group')
+            axs[i].set_ylabel('Population Numbers', fontsize=12)
+            axs[i].set_xlabel('Population Group', fontsize=12)
             axs[i].set_title(labels_wards[i], fontsize=12)
 
         fig.suptitle(f'Error Introduced with Geometric Mechanism with {title}Epsilon = {epsilon}', fontsize=16, y=1.0)
@@ -1266,8 +1268,8 @@ def population_plot_error_bars_numbers_laplace(df_populations, column_name, epsi
                 xycoords = axs[i].get_yaxis_transform(), textcoords='offset points',
                 size=10, va='center')
 
-            axs[i].set_ylabel('Population Numbers')
-            axs[i].set_xlabel('Population Group')
+            axs[i].set_ylabel('Population Numbers', fontsize=12)
+            axs[i].set_xlabel('Population Group', fontsize=12)
             axs[i].set_title(labels_wards[i], fontsize=12)
 
         fig.suptitle(f'Error Introduced with Laplace Mechanism with {title}Epsilon = {epsilon}', fontsize=16, y=1.0)
@@ -1307,8 +1309,8 @@ def population_plot_error_bars_numbers_laplace_boxen(df_populations, column_name
                 xycoords = axs[i].get_yaxis_transform(), textcoords='offset points',
                 size=10, va='center')
 
-            axs[i].set_ylabel('Population Numbers')
-            axs[i].set_xlabel('Population Group')
+            axs[i].set_ylabel('Population Numbers', fontsize=12)
+            axs[i].set_xlabel('Population Group', fontsize=12)
             axs[i].set_title(labels_wards[i], fontsize=12)
 
         fig.suptitle(f'Error Introduced with Laplace Mechanism with {title}Epsilon = {epsilon}', fontsize=16, y=1.0)
